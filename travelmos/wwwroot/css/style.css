@@ -1,0 +1,651 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+p {
+    font-size: 14px;
+}
+
+/* ========== Generic CSS =========== */
+
+.section-title {
+    padding-top:90px;
+    padding-bottom: 50px;
+    padding-left: 75px;
+    padding-right: 75px;
+   
+
+}
+.section-title h2 {
+    position: relative;
+    text-align: center;
+    color: #333;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.section-title h2:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 60px;
+    height: 1px;
+    background-color: #129CF3;
+    margin-left: -30px;
+}
+
+.section-title p {
+    color: #333;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 45px;
+    
+}
+
+/* ============= Navbar ============= */
+
+
+.navbar-light {
+    background-color: transparent;
+    border-color: #444;
+    z-index: 110;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    
+}
+.navbar-header .navbar-nav
+{
+    padding-right: 240px;
+}
+.navbar-brand {
+    padding: 9px 15px;
+   
+    
+}
+.navbar-brand img {
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+}
+.navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 170px;
+}
+
+.bg-light {
+    background-color: rgba(59, 59, 59, 0.7) !important;
+    
+    border:1px solid rgb(68, 68, 68);
+}
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+    color: #B5B5B5;
+}
+
+
+
+.btn {
+    color: #B5B5B5;
+    font-family: "Raleway", sans-serif;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    border-color: #129CF3;
+}
+
+
+.btn:hover {
+    
+    color: #129CF3;
+}
+.navbar-light .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e7e7e7;
+}
+
+.navbar-light .navbar-nav > li > a {
+    color: #B5B5B5;
+    font-family: "Raleway", sans-serif;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+}
+.navbar-light .navbar-nav > li > a:hover {
+    color: #129CF3;
+}
+.navbar-light .navbar-nav > li > a:focus {
+    color: #B5B5B5;
+}
+
+.navbar-light .navbar-nav > .active > a,
+.navbar-light .navbar-nav > .active > a:hover,
+.navbar-light .navbar-nav > .active > a:focus {
+    background-color: transparent;
+    color: #129CF3;
+}
+.btn-navbar,
+.btn-navbar:focus,
+.btn-navbar:active,
+.btn-navbar:visited
+{
+    background: transparent;
+    border-color: #129CF3;
+   
+   
+    
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    color: #129CF3;
+    margin-left: 25px;
+    
+}
+
+
+/* ============= Header ============= */ 
+.header { 
+    background-image: url("../images/header-bg.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    
+}
+.header-overlay {
+    background-color: rgba(31,31,31,0.75);
+    
+}
+.logo {
+    padding-bottom: 50px;
+    padding-top: 60px;
+}
+.header-h {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 45px;
+    padding-top: 65px;
+    text-transform: uppercase;
+}
+
+.header-text p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+.header-btns {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    
+}
+
+
+.btn-guide,
+.btn-guide:focus,
+.btn-guide:active,
+.btn-guide:visited
+{
+    background: transparent;
+    border-color: #129CF3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 19px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    color: #129CF3;
+    margin-left: 45px;
+    
+}
+.btn-guide:hover {
+    background-color: #129CF3;
+    color: #fff;
+}
+.btn-travel,
+.btn-travel:focus,
+.btn-travel:active,
+.btn-travel:visited
+{
+    background: transparent;
+    border-color: #129CF3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 19px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    color: #129CF3;
+    margin-left: 25px;
+    
+}
+.btn-travel:hover {
+    background-color: #129CF3;
+    color: #fff;
+}
+
+.header-pic1 img {
+    width: 100%;
+}
+
+/* ======== Guide ======= */
+
+.how-works-wrapper {
+    padding-top: 50px;
+}
+.about-pic img {
+    margin-top: 8px;
+    margin-bottom: 100px;
+}
+.how-works-title {
+    padding-bottom: 50px;
+}
+.how-works-title h2 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 37px;
+    position: relative;
+}
+.how-works-title h2:after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 70px;
+    height: 1px;
+    background-color: #129CF3;
+}
+.how-works-title p {
+    margin-top: 40px;
+    font-size: 19px;
+    line-height: 24px;
+    
+}
+.how-works-item {
+    position: relative;
+    padding-bottom: 4px;
+    padding-left: 80px;
+}
+.how-works-item div {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.how-works-item div i {
+    font-size: 55px;
+    color: #129CF3;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
+}
+.how-works-item h3 {
+    color: #343434;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 800;
+}
+.how-works-item p {
+    color: #727272;
+    font-size: 15px;
+}
+
+/* ======== Tourist ======= */
+
+.about-overlay {
+    background-color: rgba(31,31,31,0.75);
+    
+}
+.section-title2 {
+    padding-top:90px;
+    padding-bottom: 50px;
+   
+
+}
+.section-title2 h2 {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.section-title2 h2:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 60px;
+    height: 1px;
+    background-color: #129CF3;
+    margin-left: -30px;
+    
+}
+
+.section-title2 p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 45px;
+    
+}
+
+.how-works-wrapper2 {
+    padding-top: 50px;
+    
+}
+
+.how-works-title2 {
+    padding-bottom: 50px;
+}
+.how-works-title2 h2 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 37px;
+    position: relative;
+    color: #fff;
+}
+.how-works-title2 h2:after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 70px;
+    height: 1px;
+    background-color: #129CF3;
+    line-height: 37px;
+    
+}
+.how-works-title2 p {
+    margin-top: 40px;
+    font-size: 19px;
+    line-height: 24px;
+    color: #fff;
+}
+.how-works-item2 {
+    position: relative;
+    padding-bottom: 4px;
+    padding-left: 80px;
+}
+.how-works-item2 div {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.how-works-item2 div i {
+    font-size: 55px;
+    color: #129CF3;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
+}
+.how-works-item2 h3 {
+    color: #343434;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 800;
+}
+.how-works-item2 p {
+    color: #727272;
+    font-size: 15px;
+}
+
+
+
+
+.how-works-des2 h3 {
+    color: #fff;
+}
+.how-works-des2 p {
+    color: #fff;
+}
+.tourist-pic img {
+    margin-top: 8px;
+    margin-bottom: 100px;
+    
+}
+
+/* ======== Testimonials ======= */
+.testimonial {
+    
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: 50% 50%;
+}
+.testimonial-overlay {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.carousel-indicators {
+    bottom: -10px;
+    
+}
+
+.carousel-inner .carousel-item img {
+    border: 2px solid #129CF3;
+    border-radius: 50%;
+    padding: 3px;
+}
+.testimonial-caption {
+    padding-bottom: 70px;
+    padding-right: 60px;
+    padding-left:60px;
+    
+}
+
+.testimonial-caption h5 {
+    color: #129CF3;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 30px;
+    margin-top: 25px;
+}
+
+.testimonial-caption h4 {
+    color: #333;
+    font-style: italic;
+    font-size: 20px;
+}
+.testimonial-caption p {
+    color: #333;
+    font-size: 18px;
+    line-height: 27px;
+    padding-top: 50px;
+}
+
+/* ======== Counter ======= */
+.counter {
+    background-image: url("../images/counter-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background position: 50% 50%;
+}
+.counter-overlay {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background: rgba(0,0,0,.4);
+}
+.counter-item i {
+    color: #129CF3;
+    font-size: 60px;
+}
+.counter-item h2 {
+    font-family: "Source Sans Pro", sans-serif;
+    color: #D7DADB;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 35px;
+    margin-top: 15px;
+    margin-bottom: 1px;
+}
+.counter-item p {
+    
+    color: #D7DADB;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 0px;
+    font-weight: 300;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+/* ======== Contact Us ======= */
+.contact-us-form .form-control {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 6px 12px; 
+    font-size: 14px;
+    line-height: 21px;
+    color: #555;
+    background-color: transparent;
+    border: 1px solid #aeaeae;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    opacity: .8;
+    outline: 0px !important;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+}
+#message {
+    height: 117px;
+    resize: none;
+}
+.submit-btn,
+.submit-btn:active,
+.submit-btn:focus,
+.submit-btn:visited {
+    background-color: transparent;
+    border: 1px solid #129CF3;
+    border-radius: 4px;
+    width: 100%;
+    height: 50px;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #129CF3;
+    outline: 0px !important;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+}
+.submit-btn:hover {
+    background: #129CF3;
+    color: #fff;
+    border-color: #129CF3;
+}
+.social-icons {
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+.social-icons ul {
+    margin:0;
+    padding: 0;
+    text-align: center;
+}
+.social-icons ul li {
+    list-style: none;
+    display: inline;
+    padding-left: 10px;
+}
+.social-icons ul a {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #9D9D9D;
+    border-radius: 3px;
+    width: 45px;
+    height: 45px;
+    line-height: 49px;
+    color: #9D9D9D;
+     transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+}
+.social-icons ul li a:hover {
+    background: #129CF3;
+    border: 1px solid #129CF3;
+    color: #fff;
+}
+.social-icons ul li a i {
+    font-size: 20px;
+}
+
+/* ======== Footer ======= */
+.footer {
+    background-color: #1A1A1A;
+    padding-bottom: 35px;
+    padding-top: 35px;
+    border-bottom: 3px solid #129CF3;
+}
+#copyright {
+    width: 50%;
+}
+#copyright p {
+    color: #8C8B8A;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+#copyright p a {
+    text-decoration: none;
+    color: #129CF3;
+}
+.scroll-top {
+    text-align: right;
+}
+.scroll-top a {
+    background-color: #129CF3;
+    padding: 25px;
+}
+.scroll-top a i {
+    color: #fff;
+    font-size: 25px;
+}
