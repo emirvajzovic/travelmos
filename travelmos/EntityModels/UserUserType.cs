@@ -9,8 +9,8 @@ namespace travelmos.EntityModels
     {
         public int UserUserTypeId { get; set; }
         public Guide Guide { get; set; }
-        public int GuideId { get; set; }
+        public int? GuideId { get; set; }
         public Tourist Tourist { get; set; }
-        public int TouristId { get; set; }
+        public int? TouristId { get; set; }
     }
 }

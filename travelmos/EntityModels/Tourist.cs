@@ -10,7 +10,9 @@ namespace travelmos.EntityModels
         public int TouristId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Language Language { get; set; }
-        public int LanguageId { get; set; }
+        public int PrimaryLanguageId { get; set; }
+        public Language PrimaryLanguage { get; set; }
+        public int? SecondaryLanguageId { get; set; }
+        public Language SecondaryLanguage { get; set; }
     }
 }

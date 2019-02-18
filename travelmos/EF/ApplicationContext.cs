@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace travelmos.EF
 {
-    public class MojContext : DbContext
+    public class ApplicationContext : DbContext
     {
-        public MojContext(DbContextOptions<MojContext> options)
+        public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
         }

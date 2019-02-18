@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using travelmos.EntityModels;
 using travelmos.Models;
 
 namespace travelmos.Controllers
@@ -12,8 +13,15 @@ namespace travelmos.Controllers
     {
         public IActionResult Index()
         {
+          
             return View();
         }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
 
        
     }

@@ -1,38 +1,64 @@
-﻿<head>
+﻿@model UserLoginVM
 
+@{
+    UserLoginVM u = Context.GetLoggedUser();
+    Layout = "_layoutHome";
+}
 
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="~/css/style.css">
-
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="~/images/favicon.png">
-
-    <!-- Fontawesome -->
-    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-    <!-- Animate CSS -->
-    <link rel="stylesheet" type="text/css" href="~/css/animate.css">
-
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" type="text/css" href="~/css/responsive.css">
-
-</head>
-
+<!-- Header -->
 <header class="header" id="HOME">
+
+    <!-- Navbar -->
+    <div class="navbar-header">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#HOME"><img src="/images/logo-small.png" alt="small-logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#HOME">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#GUIDE">Guide </a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#TOURIST">Tourist </a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#CONTACT">Contact </a>
+                    </li>
+
+
+                </ul>
+                <div class="navbar-nav ml-auto">
+
+                    @if (u == null)
+                    {
+                        <button class="btn my-btn1 btn-navbar" href="#loginModal" data-toggle="modal">Log in</button>
+                        <a class="btn btn-navbar" asp-controller="Login" asp-action="SignUp">Sign up</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Login" asp-action="Logout">@u.Username</a>
+                    }
+
+                </div>
+            </div>
+        </nav>
+    </div>
+
     <div class="header-overlay">
         <div class="container header-container">
             <div class="row">
                 <div class="col-md-12">
                     <!-- Logo -->
                     <div class="logo text-center">
-                        <a class="navbar-brand" href="#HOME"><img src="images/logo.png" alt="logo"></a>
+                        <a class="navbar-brand" href="#HOME"><img src="/images/logo.png" alt="logo"></a>
                     </div>
                 </div>
             </div>
@@ -53,7 +79,7 @@
                     <div class="header-btns">
                         <!-- Guide button -->
 
-                        <a class="btn btn-guide wow fadeInLeft" href="#">Sign up to guide</a>
+                        <a class="btn btn-guide wow fadeInLeft" asp-controller="Login" asp-action="SignUp" asp-route-RegUserType="2">Sign up to guide</a>
 
                     </div>
                 </div>
@@ -67,14 +93,14 @@
                     <div class="header-btns">
                         <!-- Tourist button -->
 
-                        <a class="btn btn-travel wow fadeInRight" href="#">Sign up to travel</a>
+                        <a class="btn btn-travel wow fadeInRight" asp-controller="Login" asp-action="SignUp" asp-route-RegUserType="1">Sign up to travel</a>
                     </div>
                 </div>
 
                 <div class="col-md-3 col-md-offset-1">
                     <div class="header-pic1">
                         <!-- Header iPhone -->
-                        <img class="img-responsive" src="images/iphone-header.png" alt="header iphone">
+                        <img class="img-responsive" src="/images/iphone-header.png" alt="header iphone">
                     </div>
                 </div>
             </div>
@@ -109,7 +135,7 @@
 
                     <!-- Guide picture -->
                     <div class="about-pic wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
-                        <img src="images/about.jpg" alt="about-pic">
+                        <img src="/images/about.jpg" alt="about-pic">
                     </div>
 
                 </div>
@@ -244,7 +270,7 @@
 
                         <!-- Tourist picture -->
                         <div class="about-pic wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
-                            <img src="images/tourist.jpg" alt="tourist-pic">
+                            <img src="/images/tourist.jpg" alt="tourist-pic">
                         </div>
 
                     </div>
@@ -271,7 +297,7 @@
                         <div class="carousel-inner">
 
                             <div class="carousel-item active text-center">
-                                <img src="images/client-01.jpg" class="center-block" alt="testimonial">
+                                <img src="/images/client-01.jpg" class="center-block" alt="testimonial">
                                 <div class="testimonial-caption">
                                     <h5>Elliot Olsson</h5>
                                     <h4>Tourist from Sweden</h4>
@@ -279,7 +305,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item text-center">
-                                <img src="images/client-02.jpg" class="center-block" alt="testimonial">
+                                <img src="/images/client-02.jpg" class="center-block" alt="testimonial">
                                 <div class="testimonial-caption">
                                     <h5>George Harris</h5>
                                     <h4>Guide from USA</h4>
@@ -287,7 +313,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item text-center">
-                                <img src="images/client-03.jpg" class="center-block" alt="testimonial">
+                                <img src="/images/client-03.jpg" class="center-block" alt="testimonial">
                                 <div class="testimonial-caption">
                                     <h5>Alessandro Ravellino</h5>
                                     <h4>Tourist from Argentina</h4>
@@ -396,25 +422,33 @@
     </div>
 </section>
 
+<!-- Login popup -->
+<form asp-controller="Login" asp-action="Index" asp-route-for="@Model" method="post" id="loginForm">
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" style="display: none" id="loginMsg"></div>
+                    <div class="form-group">
+                        <label>Username:</label>
+                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
 
-<!-- Bootstrap JavaScript -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+                        <label>Password:</label>
+                        @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                    </div>
 
 
 
-<!-- Add JS Counter lib -->
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-
-<!-- Add Animation -->
-<script src="js/wow.min.js"></script>
-
-<!-- Add wow js lib -->
-<script src="js/wow.min.js"></script>
-
-<!-- Custom JavaScript -->
-<script src="js/custom.js"></script>
-
-
-
+                </div>
+                <div class="modal-footer">
+                    <button class="btn my-btn1 btn-navbar">Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using travelmos.EF;
 
 namespace travelmos.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class MojContextModelSnapshot : ModelSnapshot
+    [Migration("20190217122608_dbFixes")]
+    partial class dbFixes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,11 +52,11 @@ namespace travelmos.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<int?>("OfferId");
+                    b.Property<int>("OfferId");
 
                     b.Property<int>("PrimaryLanguageId");
 
-                    b.Property<int?>("SecondaryLanguageId");
+                    b.Property<int>("SecondaryLanguageId");
 
                     b.HasKey("GuideId");
 
@@ -115,7 +117,7 @@ namespace travelmos.Migrations
 
                     b.Property<int>("PrimaryLanguageId");
 
-                    b.Property<int?>("SecondaryLanguageId");
+                    b.Property<int>("SecondaryLanguageId");
 
                     b.HasKey("TouristId");
 
@@ -158,9 +160,9 @@ namespace travelmos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("GuideId");
+                    b.Property<int>("GuideId");
 
-                    b.Property<int?>("TouristId");
+                    b.Property<int>("TouristId");
 
                     b.HasKey("UserUserTypeId");
 
@@ -188,7 +190,8 @@ namespace travelmos.Migrations
                 {
                     b.HasOne("travelmos.EntityModels.Offer", "Offer")
                         .WithMany()
-                        .HasForeignKey("OfferId");
+                        .HasForeignKey("OfferId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("travelmos.EntityModels.Language", "PrimaryLanguage")
                         .WithMany()
@@ -197,7 +200,8 @@ namespace travelmos.Migrations
 
                     b.HasOne("travelmos.EntityModels.Language", "SecondaryLanguage")
                         .WithMany()
-                        .HasForeignKey("SecondaryLanguageId");
+                        .HasForeignKey("SecondaryLanguageId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("travelmos.EntityModels.Tourist", b =>
@@ -209,7 +213,8 @@ namespace travelmos.Migrations
 
                     b.HasOne("travelmos.EntityModels.Language", "SecondaryLanguage")
                         .WithMany()
-                        .HasForeignKey("SecondaryLanguageId");
+                        .HasForeignKey("SecondaryLanguageId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("travelmos.EntityModels.User", b =>
@@ -224,11 +229,13 @@ namespace travelmos.Migrations
                 {
                     b.HasOne("travelmos.EntityModels.Guide", "Guide")
                         .WithMany()
-                        .HasForeignKey("GuideId");
+                        .HasForeignKey("GuideId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("travelmos.EntityModels.Tourist", "Tourist")
                         .WithMany()
-                        .HasForeignKey("TouristId");
+                        .HasForeignKey("TouristId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

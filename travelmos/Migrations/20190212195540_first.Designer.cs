@@ -9,7 +9,7 @@ using travelmos.EF;
 
 namespace travelmos.Migrations
 {
-    [DbContext(typeof(MojContext))]
+    [DbContext(typeof(ApplicationContext))]
     [Migration("20190212195540_first")]
     partial class first
     {
